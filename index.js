@@ -12,9 +12,9 @@ function loadLicenses() {
 function saveLicenses(licenses) {
   fs.writeFileSync(licensesPath, JSON.stringify(licenses, null, 2));
   try {
-    execSync("git add .");
-    execSync('git commit -m "Update licenses"');
-    execSync("git push");
+    execSync("git add .", { stdio: "ignore" });
+    execSync('git commit -m "Update licenses"', { stdio: "ignore" });
+    execSync("git push", { stdio: "ignore" });
     console.log("✅ Licenses has been updated");
   } catch (err) {
     console.error("⚠️ Git push failed:", err.message);
