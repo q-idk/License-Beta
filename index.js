@@ -15,7 +15,7 @@ function saveLicenses(licenses) {
     execSync("git add .");
     execSync('git commit -m "Update licenses"');
     execSync("git push");
-    console.log("✅ Changes pushed to GitHub");
+    console.log("✅ Licenses has been updated");
   } catch (err) {
     console.error("⚠️ Git push failed:", err.message);
   }
