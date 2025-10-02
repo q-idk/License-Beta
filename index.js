@@ -46,14 +46,12 @@ rl.question("Choose option: ", (opt) => {
         }
       licenses[key] = true;
       saveLicenses(licenses);
-      startManager()
     });
   } else if (opt === "2") {
     rl.question("Enter key to disable: ", (key) => {
       if (licenses[key] !== undefined) {
         licenses[key] = false;
         saveLicenses(licenses);
-        startManager()
       } else {
         startManager()
         error("❌ Key not found.");
@@ -65,7 +63,6 @@ rl.question("Choose option: ", (opt) => {
       if (licenses[key] !== undefined) {
         licenses[key] = true;
         saveLicenses(licenses);
-        startManager()
       } else {
         error("❌ Key not found.");
         startManager()
@@ -76,7 +73,6 @@ rl.question("Choose option: ", (opt) => {
       if (licenses[key] !== undefined) {
         delete licenses[key];
         saveLicenses(licenses);
-        startManager()
       } else {
         error("❌ Key not found.");
         startManager()
